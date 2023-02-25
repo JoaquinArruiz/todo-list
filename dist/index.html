@@ -15,10 +15,29 @@
 
         <section id="leftbar">
                 <h3>FOLDERS should be displayed below</h3>
-                <div class="foldersContainer"></div>
+                <div class="foldersContainer">
+                    <p>FOlders HERE</p>
+                    <p>FOlders HERE</p>
+                    <p>FOlders HERE</p>
+                </div>
+                <form class="folderForm hidden">
+                    <label for="folder_name">Folder Name:</label>
+                    <input type="text" id="folder_name">
+                    <button>+</button>
+                </form>
         </section>
 
-        <section id="taskcontainer"></section>
+        <section id="tasks">
+                <form class="taskForm">
+                    <input type="text" name="taskName" id="taskName" placeholder="New task name">
+                    <input type="date" name="taskDate" id="taskDate">
+                    <select name="taskPriority" id="taskPriority" aria-placeholder="Priority">
+                        <option value="urgPrio">High</option>
+                        <option value="norPrio">Normal</option>
+                        <option value="lowPrio">Low</option>
+                    </select>
+                </form>
+        </section>
 
         <section id="footer">footer</section>
 
