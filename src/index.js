@@ -1,3 +1,9 @@
 import  './styles/style.scss';
+import {renderFolders} from './modules/folders';
 
-console.log("asd")
+
+renderFolders()
+
+
+
+
