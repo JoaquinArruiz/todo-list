@@ -17,7 +17,7 @@ export class Task{
         this.priority = priority
     }
 
-    renderCard(){
+    renderTask(){
         let taskCard = document.createElement('div');
         taskCard.classList.add('taskCard');
 

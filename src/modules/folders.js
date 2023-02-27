@@ -23,13 +23,14 @@ export class Folder{
     getTasks() {
         return this.tasks;
     }
+    
 
     renderFolder() {
         let folderCard = document.createElement('div');
         folderCard.classList.add('folderCard');
 
         let folderName = document.createElement('h1');
-        folderName.textContent = folder.name;
+        folderName.textContent = this.name;
         folderCard.appendChild(folderName);
 
         return folderCard

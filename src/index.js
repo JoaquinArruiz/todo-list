@@ -1,11 +1,7 @@
 import  './styles/style.scss';
-import {renderFolders} from './modules/folders';
-import { } from './modules/tasks';
+import { Task } from './modules/tasks';
+import { Folder } from './modules/folders';
+import { folderList } from './modules/todo';
+import {} from './modules/DOM';
 
-
-renderFolders()
-
-
-
-
-
+console.log(folderList)
