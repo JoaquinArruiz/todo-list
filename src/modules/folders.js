@@ -1,4 +1,6 @@
-export class Folder{
+
+
+class Folder{
     constructor(name) {
         this.name = name;
         this.tasks = [];
@@ -33,6 +35,15 @@ export class Folder{
         folderName.textContent = this.name;
         folderCard.appendChild(folderName);
 
+        folderCard.addEventListener('click', () => {
+            currentFolder = this.name
+            folderCard.classList.add('active')
+        })
+
         return folderCard
     }
 }
+
+let currentFolder
+
+export {currentFolder, Folder}
