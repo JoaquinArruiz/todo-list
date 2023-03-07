@@ -1,10 +1,10 @@
-
-
 class Folder{
-    constructor(name) {
+    constructor(name, setActive) {
         this.name = name;
-        this.tasks = [];
+        this.tasks = []
+        this.setActive = setActive
     }
+    
 
     setFolderName(name){
         this.name = name;
@@ -18,8 +18,8 @@ class Folder{
         return this.tasks.push(task);
     }
 
-    deleteTask(task) {
-        this.tasks = this.tasks.filter((task) => task.name !== task);
+    deleteTask(taskName) {
+        this.tasks = this.tasks.filter((task) => task.name !== taskName);
     }
 
     getTasks() {
@@ -31,19 +31,23 @@ class Folder{
         let folderCard = document.createElement('div');
         folderCard.classList.add('folderCard');
 
+        
         let folderName = document.createElement('h1');
         folderName.textContent = this.name;
         folderCard.appendChild(folderName);
 
+        folderCard.setAttribute("id", this.name + ":folder")
+
         folderCard.addEventListener('click', () => {
-            currentFolder = this.name
-            folderCard.classList.add('active')
-        })
+            this.setActive(this.name)
+        });
+
+
 
         return folderCard
     }
 }
 
-let currentFolder
 
-export {currentFolder, Folder}
+
+export {Folder}

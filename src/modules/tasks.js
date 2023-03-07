@@ -1,8 +1,9 @@
 export class Task{
-    constructor(name, date, priority){
+    constructor(name, date, priority, parentFolder){
         this.name = name;
         this.date = date;
         this.priority = priority;
+        this.parentFolder = parentFolder
     }
 
     setName(name){
@@ -30,8 +31,26 @@ export class Task{
         taskCard.appendChild(taskDate);
 
         let taskPriority = document.createElement('h1');
-        taskPriority.textContent = this.priority;
-        taskCard.appendChild(taskPriority)
+        if (this.priority == 'urgPrio'){
+            taskPriority.textContent = 'Urgent';
+        }
+        if (this.priority == 'norPrio'){
+            taskPriority.textContent = 'Normal';
+        }
+        if (this.priority == 'lowPrio'){
+            taskPriority.textContent = 'Low';
+        }
+        
+        taskCard.appendChild(taskPriority);
+
+        let deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('deleteTaskBtn')
+        deleteBtn.textContent = "delete";
+        deleteBtn.addEventListener('click', () => {
+            this.parentFolder.deleteTask(this.name, this.date)
+            taskCard.remove()
+        });
+        taskCard.appendChild(deleteBtn)
 
         return taskCard;
     }

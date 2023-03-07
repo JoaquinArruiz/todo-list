@@ -1,16 +1,19 @@
 import { Task } from "./tasks";
-import { Folder, currentFolder } from "./folders";
-import { folderList } from "./todo";
+import { Folder } from "./folders";
+import { folderList, currentFolder } from "./todo";
 
 
 
 console.log(folderList)
-console.log(currentFolder)
 
 let foldersContainer = document.querySelector('.foldersContainer');
-let taskContainer = document.querySelector('.tasks')
+let taskContainer = document.querySelector('.tasks');
 
 let header = document.getElementById("header");
+
+header.addEventListener('click', () => {
+    console.log(folderList[currentFolder].tasks)
+})
 
 
 Object.values(folderList).forEach(folder => { 
